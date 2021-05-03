@@ -1,7 +1,7 @@
 
 from os import environ
 
-CONSUMER_KEY = environ['CONSUMER-KEY'] 
-CONSUMER_SECRET = environ['CONSUMER-SECRET'] 
-ACCESS_KEY =  environ['ACCESS-KEY']
-ACCESS_SECRET =  environ['ACCESS-SECRET']
+CONSUMER_KEY = environ['CONSUMER_KEY'] 
+CONSUMER_SECRET = environ['CONSUMER_SECRET'] 
+ACCESS_KEY =  environ['ACCESS_KEY']
+ACCESS_SECRET =  environ['ACCESS_SECRET']
