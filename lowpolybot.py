@@ -10,12 +10,13 @@ class StreamListener(tweepy.StreamListener):
         self.me = api.me()
     
     def on_status(self, tweet):
-        print("New tweet fetched " + tweet.author.screen_name)
         tweet_id = tweet.id
         status = api.get_status(tweet_id)
         action = random.randint(0,20)
         time.sleep(4)
-        if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name != "BotPolygon":
+
+        if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name not "BotPolygon":
+            print("New tweet fetched " + tweet.author.screen_name)
             if action < 5:
                 print("Liking")
                 api.create_favorite(tweet.id)                
