@@ -1,5 +1,5 @@
 
-import os import environ
+from os import environ
 
 CONSUMER_KEY = environ['CONSUMER-KEY'] 'pDbJJIRpe3WJWBcwmIJpmbFBo'
 CONSUMER_SECRET = environ['CONSUMER-SECRET'] 'SSTzciE3cOaADC6BcLXMWXmf8QzbN2jA9oUiP9rccA7oAtRgPM'
