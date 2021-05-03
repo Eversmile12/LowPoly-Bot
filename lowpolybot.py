@@ -10,24 +10,26 @@ class StreamListener(tweepy.StreamListener):
         self.me = api.me()
     
     def on_status(self, tweet):
-        tweet_id = tweet.id
-        status = api.get_status(tweet_id)
-        action = random.randint(0,20)
-        time.sleep(4)
+        try:
+            tweet_id = tweet.id
+            status = api.get_status(tweet_id)
+            action = random.randint(0,20)
+            time.sleep(4)
 
-        if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name not "BotPolygon":
-            print("New tweet fetched " + tweet.author.screen_name)
-            if action < 5:
-                print("Liking")
-                api.create_favorite(tweet.id)                
-            elif action < 10:
-                print("Retweeting")
-                api.retweet(tweet.id)
-            elif action > 10:
-                print("Retweeting and liking")
-                api.retweet(tweet.id)
-                api.create_favorite(tweet.id)
-            
+            if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name not "BotPolygon":
+                print("New tweet fetched " + tweet.author.screen_name)
+                if action < 5:
+                    print("Liking")
+                    api.create_favorite(tweet.id)                
+                elif action < 10:
+                    print("Retweeting")
+                    api.retweet(tweet.id)
+                elif action > 10:
+                    print("Retweeting and liking")
+                    api.retweet(tweet.id)
+                    api.create_favorite(tweet.id)
+        except:
+            return        
 
 
 
@@ -42,5 +44,6 @@ api = tweepy.API(auth, wait_on_rate_limit = True, wait_on_rate_limit_notify = Tr
 tweets_listener = StreamListener(api)
 stream = tweepy.Stream(api.auth, tweets_listener)
 stream.filter(track=["#IndieGameDev"], is_async=True)
+
 
 
