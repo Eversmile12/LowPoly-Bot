@@ -16,7 +16,7 @@ class StreamListener(tweepy.StreamListener):
             action = random.randint(0,20)
             time.sleep(4)
 
-            if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name not "BotPolygon":
+            if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name != "BotPolygon":
                 print("New tweet fetched " + tweet.author.screen_name)
                 if action < 5:
                     print("Liking")
