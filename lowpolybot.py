@@ -3,7 +3,6 @@ import random
 from keys import *
 from datetime import datetime, timedelta
 
-
 class StreamListener(tweepy.StreamListener):
     def __init__(self, api):
         self.api = api
