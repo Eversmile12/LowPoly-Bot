@@ -2,6 +2,7 @@ import tweepy
 import random
 from keys import *
 from datetime import datetime, timedelta
+import time
 
 class StreamListener(tweepy.StreamListener):
     def __init__(self, api):
@@ -13,12 +14,11 @@ class StreamListener(tweepy.StreamListener):
         tweet_id = tweet.id
         status = api.get_status(tweet_id)
         action = random.randint(0,20)
-        print(str(action))
-        if not status.retweeted and not status.favorited and status.lang == 'en':
+        time.sleep(4)
+        if not status.retweeted and not status.favorited and status.lang == 'en' and tweet.author.screen_name != "BotPolygon":
             if action < 5:
                 print("Liking")
-                api.create_favorite(tweet.id)
-                
+                api.create_favorite(tweet.id)                
             elif action < 10:
                 print("Retweeting")
                 api.retweet(tweet.id)
