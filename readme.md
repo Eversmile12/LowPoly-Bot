@@ -121,7 +121,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@VittoRivabella](https://twitter.com/@VittoRivabella) - iwasvitto@gmail.com
+Vittorio Rivabella - [@VittoRivabella](https://twitter.com/@VittoRivabella) - iwasvitto@gmail.com
 
 Project Link: [https://github.com/Eversmile12/LowPoly-Bot](https://github.com/Eversmile12/LowPoly-Bot)
 
