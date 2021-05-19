@@ -42,8 +42,15 @@ auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit = True, wait_on_rate_limit_notify = True)
 
 tweets_listener = StreamListener(api)
-stream = tweepy.Stream(api.auth, tweets_listener)
-stream.filter(track=["#IndieGameDev"], is_async=True)
+stream_tweets = tweepy.Stream(api.auth, tweets_listener)
+stream_tweets.filter(track=["#indiedev"], is_async=True)
 
 
-
+# with open("latest_id.txt") as file:
+#     max_id = file.readline()
+#     print(max_id)
+#     while True:
+#         tweets = api.user_timeline(user_id="1292738130441908224", max_id = max_id, exclude_replies = True)
+#         for tweet in tweets:
+#             print(tweet.text)
+#             file.
